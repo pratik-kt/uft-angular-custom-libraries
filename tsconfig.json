@@ -6,5 +6,12 @@
 */
 {
   "files": [],
-  "references": []
+  "references": [
+    {
+      "path": "./projects/date-range-picker/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/date-range-picker/tsconfig.spec.json"
+    }
+]
 }

@@ -1,0 +1,68 @@
+
+<div class="d-flex justify-content-between align-items-center datepicker-head">
+  <div class="add-date">
+    <div class="date-sec">
+    <span class="start-date">
+      <span tabindex="-1" aria-hidden="true">{{getName(inputStartDate, inputEndDate)}} Start date </span>
+      <span role="text" tabindex="0" aria-label="Start date" [attr.aria-placeholder]="(startDate ? (startDate | date: 'LLL.d') : 'Start date not selected yet!')" class="font-14 text-center"> {{(startDate | date: 'LLL.d') || ""}}</span>
+    </span>
+      <span class="end-date">
+      <span tabindex="-1" aria-hidden="true">End date </span>
+      <span role="text" tabindex="0" aria-label="End date" [attr.aria-placeholder]="(endDate ? (endDate | date: 'LLL.d') : 'End date not selected yet!')" class="font-14 text-center"> {{(endDate | date: 'LLL.d') || ""}}</span>
+    </span>
+    </div>
+  </div>
+  <div>
+    <a role="button" aria-label="Clear Selected Date" tabindex="0" (click)="clearDate()" [ngClass]="(startDate) ? 'active' : ''">Clear</a>
+    <button tabindex="0" role="button" [attr.aria-label]="getSaveButtonName" mat-flat-button class="mr-35" color="primary" type="button" [disabled]="!endDate" (click)="applyDate()">{{getSaveButtonName}}</button>
+  </div>
+</div>
+<div class="control-section">
+  <div>
+    <a role="button" aria-label="Previous Month" tabindex="0" (click)="prevMonth()" [ngClass]="isPrevButton ? 'activeArrow' : 'disabledArrow'"><mat-icon>navigate_before</mat-icon></a>
+    <span id="cma-monthName1"></span>
+  </div>
+  <div>
+    <span id="cma-monthName2"></span>
+    <a role="button" aria-label="Next Month" tabindex="0" (click)="nextMonth()" [ngClass]="isNextButton ? 'activeArrow' : 'disabledArrow'"><mat-icon>navigate_next</mat-icon></a>
+  </div>
+</div>
+<div class="date-month">
+  <div>
+
+    <table class="my-class">
+      <thead tabindex="-1" aria-hidden="true">
+      <tr>
+        <th>Sun</th>
+        <th>Mon</th>
+        <th>Tue</th>
+        <th>Wed</th>
+        <th>Thu</th>
+        <th>Fri</th>
+        <th>Sat</th>
+      </tr>
+      </thead>
+      <tbody id="calendar-body">
+      </tbody>
+    </table>
+  </div>
+
+  <div>
+
+    <table class="my-class">
+      <thead>
+      <tr>
+        <th>Sun</th>
+        <th>Mon</th>
+        <th>Tue</th>
+        <th>Wed</th>
+        <th>Thu</th>
+        <th>Fri</th>
+        <th>Sat</th>
+      </tr>
+      </thead>
+      <tbody id="calendar-body2">
+      </tbody>
+    </table>
+  </div>
+</div>
